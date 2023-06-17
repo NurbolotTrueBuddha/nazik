@@ -10,13 +10,17 @@ const chatId = '842592067'
 let counter = 1;
 
 async function sendMessage() {
-    let data = await fs.readFile('./compliments.json', { encoding: 'utf8' });
-    let converted = await JSON.parse(data);
-    const message = converted.compliments[counter];
-    await bot.sendMessage(chatId, message)
-    counter++;
-    if (counter >= converted.compliments.length) {
-        counter = 0;
+    try {
+        let data = await fs.readFile('./compliments.json', { encoding: 'utf8' });
+        let converted = JSON.parse(data);
+        const message = converted.compliments[counter];
+        await bot.sendMessage(chatId, message);
+        counter++;
+        if (counter >= converted.compliments.length) {
+            counter = 0;
+        }
+    } catch (error) {
+        console.error('Error sending message:', error);
     }
 };
 
@@ -29,3 +33,4 @@ cron.schedule('12 8,18 * * *', async() => {
 bot.on('message', (msg) => {
     console.log(msg);
 })
+export default bot;
