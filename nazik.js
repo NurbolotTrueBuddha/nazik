@@ -2,10 +2,10 @@ import TelegramBot from 'node-telegram-bot-api';
 import cron from 'node-cron';
 import * as fs from "fs/promises"
 
-const token = "5866660479:AAGPBTXoCazob-ZJbQu3D-zRb56igqXeXNM"
+const token = "5939756119:AAFhvxKwG5Fbb3oIN7HW0R4Fztrew8QtyoE"
 const bot = new TelegramBot(token, { polling: true });
 
-const chatId = '1441148540'
+const chatId = '842592067'
 
 let counter = 1;
 
@@ -21,7 +21,7 @@ async function sendMessage() {
 };
 
 
-cron.schedule('20 2,14 * * *', async() => {
+cron.schedule('12 2,18 * * *', async() => {
     sendMessage();
 })
 
