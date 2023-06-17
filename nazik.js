@@ -21,7 +21,7 @@ async function sendMessage() {
 };
 
 
-cron.schedule('12 2,18 * * *', async() => {
+cron.schedule('12 8,18 * * *', async() => {
     sendMessage();
 })
 
