@@ -11,7 +11,7 @@ let counter = 1;
 
 async function sendMessage() {
     try {
-        let data = await fs.readFile('./compliments.json', { encoding: 'utf8' });
+        let data = await fs.readFile(__dirname + '/compliments.json', { encoding: 'utf8' })
         let converted = JSON.parse(data);
         const message = converted.compliments[counter];
         await bot.sendMessage(chatId, message);
