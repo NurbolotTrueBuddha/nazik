@@ -33,4 +33,4 @@ cron.schedule('12 8,18 * * *', async() => {
 bot.on('message', (msg) => {
     console.log(msg);
 })
-export default bot;
+export default sendMessage;
