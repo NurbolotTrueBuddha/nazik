@@ -1,4 +1,7 @@
 {
+
+    "installCommand": "npm install",
+
     "builds": [{
         "src": "nazik.js",
         "use": "@vercel/node"
@@ -7,5 +10,5 @@
         "src": "/nazik",
         "dest": "/nazik.js"
     }],
-    "files": ["compliments.json"]
+    "files": ["./compliments.json"]
 }
